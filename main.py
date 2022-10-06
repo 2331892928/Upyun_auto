@@ -72,7 +72,7 @@ class Upyun:
             res_json = json.loads(res_txt)
         except:
             print("登陆错误")
-        if res_json['msg']['messages'][0] != "登录成功":
+        if "msg" in res_json and res_json['msg']['messages'][0] != "登录成功":
             print("账号密码错误")
             return
         self.cookies = res.cookies
